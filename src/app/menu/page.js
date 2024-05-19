@@ -4,6 +4,8 @@ import Footer from "../Components/Footer";
 import EditDish from "../Components/EditDish";
 import AddDish from "../Components/AddDish";
 import { PrismaClient } from "@prisma/client";
+export const dynamic = "force-dynamic";
+
 
 const prisma = new PrismaClient;
 
@@ -39,7 +41,7 @@ export default async function Home({ }) {
     const dishes = await getDishes();
     return (
         <>
-            <title>Smakosz - Promocje</title>
+            <title>Smakosz - Menu</title>
             <Navbar />
             <Title />
             <section className="flex justify-center items-center">

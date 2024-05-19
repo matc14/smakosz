@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 function Title() {
     return (
         <section className="py-20 flex justify-center w-full h-auto bg-[#467FF7]">
-            <span className="text-6xl font-bold text-center py-5 text-[#fff]">PANEL ADMINISTRATORA</span>
+            <span className="text-6xl font-bold text-center py-5 text-[#fff]">LOGOWANIE</span>
         </section>
     );
 }
@@ -51,7 +51,7 @@ function Form() {
                     <input
                         type="text"
                         id="username"
-                        className="bg-[#F3F5F8] border text-[#1C2448] placeholder-[#324A6D] font-medium text-sm rounded-full block w-auto p-2.5"
+                        className="bg-[#F3F5F8] border text-[#1C2448] placeholder-[#324A6D] font-medium text-sm rounded-full block w-64 p-2.5"
                         placeholder="Login"
                         required />
                 </div>
@@ -59,12 +59,12 @@ function Form() {
                     <input
                         type="password"
                         id="password"
-                        className="bg-[#F3F5F8] border text-[#1C2448] placeholder-[#324A6D] font-medium text-sm rounded-full block w-auto p-2.5"
+                        className="bg-[#F3F5F8] border text-[#1C2448] placeholder-[#324A6D] font-medium text-sm rounded-full block w-64 p-2.5"
                         placeholder="Hasło"
                         required />
                 </div>
                 {alert ? (
-                    <div class="p-3 mb-4 w-auto text-sm font-bold text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 rounded-full border-none text-center" role="alert">
+                    <div class="px-3  py-2.5 mb-4 w-64 text-sm font-bold text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 rounded-full border-none text-center" role="alert">
                      Błędny login lub hasło!
                     </div>
                 ) : 
@@ -72,7 +72,7 @@ function Form() {
                     <></>
                 )}
                 
-                <button type="submit" className="mb-10 py-2 w-auto px-16 bg-[#467FF7] hover:bg-[#4675f7] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Zaloguj się</button>
+                <button type="submit" className="mb-10 py-2.5 w-64 bg-[#467FF7] hover:bg-[#4675f7] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Zaloguj się</button>
             </form>
         </section>
     );
