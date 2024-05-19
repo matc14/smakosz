@@ -1,8 +1,6 @@
 
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import EditDish from "../Components/EditDish";
-import AddDish from "../Components/AddDish";
 import { PrismaClient } from "@prisma/client";
 export const dynamic = "force-dynamic";
 
@@ -29,7 +27,6 @@ function Dish({ id, imageSrc, name, price }) {
             <img src={imageSrc} className="w-[400px] h-[300px]" />
             <span className="pt-4 font-bold text-center">{name}</span>
             <span className="mr-2 text-[#324A6D] mb-2 text-center p-1.5">{price + " zł"}</span>
-            {/* <Button className="mr-2 xl:w-72 w-60  text-[#D9D9D9] font-bold border border-[#412234] bg-[#412234] mb-4 hover:bg-[#4e283e] hover:border-[#4e283e] active:bg-[#572e46] focus:ring-0">Szczegóły</Button> */}
         </div>
     );
 }

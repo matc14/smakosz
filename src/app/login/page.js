@@ -1,7 +1,7 @@
 'use client'
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { getSession, signIn, signOut, useSession, } from 'next-auth/react';
+import { signIn, useSession, } from 'next-auth/react';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 

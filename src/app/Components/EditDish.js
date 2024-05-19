@@ -40,7 +40,7 @@ export default function EditDish({ id, imageSrc, nameC, priceC }) {
 
     const handleSave = () => {
         setEditing(false);
-        //handleClick();
+        handleClick();
 
     };
 
