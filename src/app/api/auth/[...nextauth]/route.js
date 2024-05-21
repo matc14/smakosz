@@ -13,12 +13,12 @@ export const authOptions = {
     CredentialsProvider({
       name: 'credentials',
       credentials: {
-        username: { label: 'Username', type: 'text' },
+        login: { label: 'login', type: 'text' },
         password: { label: 'Password', type: 'password' }
       },
       authorize: async (credentials) => {
         const user = await prisma.user.findUnique({
-          where: { username: credentials.username },
+          where: { login: credentials.login },
         });
 
         if (!user) {
@@ -44,7 +44,7 @@ export const authOptions = {
         return {
           ...token,
           id: user.id,
-          name: user.username,
+          name: user.login,
         }
       }
       return token;

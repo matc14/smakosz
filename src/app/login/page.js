@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 import { signIn, useSession, } from 'next-auth/react';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 
 
 function Title() {
@@ -26,12 +26,12 @@ function Form() {
     const [alert, setAlert] = useState(false);
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const username = e.target.username.value;
+        const login = e.target.login.value;
         const password = e.target.password.value;
 
         const res = await signIn('credentials', {
             redirect: false,
-            username,
+            login,
             password,
         });
 
@@ -46,11 +46,11 @@ function Form() {
     return (
         <section className="flex flex-col items-center justify-center w-full h-auto bg-white py-32">
             <span className="mt-10 text-6xl font-bold text-[#1C2448] w-full text-center">Zaloguj się</span>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="flex flex-col items-center">
                 <div className="mb-4 mt-10">
                     <input
                         type="text"
-                        id="username"
+                        id="login"
                         className="bg-[#F3F5F8] border text-[#1C2448] placeholder-[#324A6D] font-medium text-sm rounded-full block w-64 p-2.5"
                         placeholder="Login"
                         required />
@@ -72,7 +72,10 @@ function Form() {
                     <></>
                 )}
                 
-                <button type="submit" className="mb-10 py-2.5 w-64 bg-[#467FF7] hover:bg-[#4675f7] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Zaloguj się</button>
+                <button type="submit" className=" mb-4 py-2.5 w-64 bg-[#467FF7] hover:bg-[#4675f7] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Zaloguj się</button>
+                <Link href="/register">
+            <button className="py-2.5 w-64 bg-[#FF4757] hover:bg-[#ff5a5a] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Rejestracja</button>
+            </Link>
             </form>
         </section>
     );

@@ -8,13 +8,13 @@ function Footer() {
                     <span className="font-bold text-xl text-[#1C2448]">Smakosz</span>
                     <span className="text-[#324A6D]">Zobacz nasze socialmedia!</span>
                     <div className="flex flex-row justify-between pt-4">
-                        <Link href="#">
+                        <Link href="https://www.facebook.com">
                             <img className="w-4 h-6" src="/img/facebook.png" />
                         </Link>
-                        <Link href="#">
+                        <Link href="https://www.instagram.com">
                             <img className="w-6 h-6" src="/img/instagram.png" />
                         </Link>
-                        <Link href="#">
+                        <Link href="https://x.com">
                             <img className="w-7 h-6" src="/img/twitter.png" />
                         </Link>
                     </div>

@@ -1,11 +1,17 @@
 
+import { PrismaClient } from "@prisma/client";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { PrismaClient } from "@prisma/client";
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]/route';
+import AddCart from "../Components/AddCart";
+
+
 export const dynamic = "force-dynamic";
 
-
 const prisma = new PrismaClient;
+
+const session = await getServerSession(authOptions);
 
 async function getDishes() {
     const dishes = await prisma.dish.findMany()
@@ -21,21 +27,29 @@ function Title() {
 }
 
 
-function Dish({ id, imageSrc, name, price }) {
+function Dish({ id, imageSrc, name, price, addToCart }) {
     return (
         <div className="w-full h-auto flex flex-col justify-center items-center text-[#1C2448] bg-[#F3F5F8]">
             <img src={imageSrc} className="w-[400px] h-[300px]" />
             <span className="pt-4 font-bold text-center">{name}</span>
             <span className="mr-2 text-[#324A6D] mb-2 text-center p-1.5">{price + " zł"}</span>
+        
+            {/* <button 
+                className="mt-4 px-4 py-2 bg-[#467FF7] text-white rounded"
+            >
+                Dodaj do koszyka
+            </button> */}
+            
+            <AddCart />
         </div>
     );
 }
 
 
-
-
 export default async function Home({ }) {
     const dishes = await getDishes();
+
+
     return (
         <>
             <title>Smakosz - Menu</title>
@@ -50,7 +64,9 @@ export default async function Home({ }) {
                                 imageSrc={dish.image}
                                 name={dish.name}
                                 price={dish.price}
+                                
                             />
+
                         )
                     })
                     }
