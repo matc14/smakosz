@@ -51,36 +51,6 @@ function Catering() {
   );
 }
 
-function Dishes() {
-  return (
-    <section className="flex flex-col justify-center items-center pb-20">
-      <span className="mb-4 text-6xl font-bold text-[#1C2448]">Poznaj nasze dania</span>
-      <div className="grid lg:grid-cols-4 grid-cols-2 gap-10 justify-center items-center w-5/6">
-        <div className="flex flex-col">
-          <img className="w-80 h-96 mt-8" src="img/home-dish-1.png" />
-          <span className="font-bold text-lg">Margherita</span>
-          <span>40.00 zł</span>
-        </div>
-        <div className="flex flex-col">
-          <img className="w-80 h-96" src="img/home-dish-2.png" />
-          <span className="font-bold text-lg">Jalapeño</span>
-          <span>45.00 zł</span>
-        </div>
-        <div className="flex flex-col">
-          <img className="w-80 h-96 mt-8" src="img/home-dish-3.png" />
-          <span className="font-bold text-lg">Hawajska</span>
-          <span>60.00 zł</span>
-        </div>
-        <div className="flex flex-col">
-          <img className="w-80 h-96" src="img/home-dish-4.png" />
-          <span className="font-bold text-lg">Swojska</span>
-          <span>55.00 zł</span>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Promotions() {
   return (
     <section className="flex flex-col justify-center items-center pb-20">
@@ -106,7 +76,6 @@ export default function Home() {
       <Title />
       <Why />
       <Catering />
-      {/* <Dishes /> */}
       <Promotions />
       <Opinions />
       <Footer />

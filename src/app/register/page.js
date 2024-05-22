@@ -1,6 +1,7 @@
 'use client';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import Link from "next/link";
 import { useState } from "react";
 
 function Title() {
@@ -98,13 +99,10 @@ function Form() {
                         placeholder="Powtórz Hasło"
                         required />
                 </div>
-                {/* {alert && (
-                    <div className="px-3 py-2.5 mb-4 w-64 text-sm font-bold text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 rounded-full border-none text-center" role="alert">
-                        {alertMessage}
-                    </div>
-                )} */}
                 <button type="submit" className="mb-4 py-2.5 w-64 bg-[#467FF7] hover:bg-[#4675f7] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Zarejestruj się</button>
-                <button type="button" onClick={() => router.push('/login')} className="py-2.5 w-64 bg-[#FF4757] hover:bg-[#ff5a5a] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Powrót do logowania</button>
+                <Link href="/login">
+                <button type="button"  className="py-2.5 w-64 bg-[#FF4757] hover:bg-[#ff5a5a] text-center text-[#fff] font-bold rounded-full border-none focus:ring-0">Powrót do logowania</button>
+                </Link>
             </form>
         </section>
     );

@@ -111,7 +111,7 @@ export default function Home({ }) {
             <Title />
             <section className="flex justify-center items-center pt-10">
                 <div className="w-5/6 text-center">
-                    <span className="text-2xl font-bold">Całkowita cena: {getTotalPrice()} zł</span>
+                    <span className="text-2xl font-bold text-[#1C2448]">Całkowity koszt: {getTotalPrice()} zł</span>
                 </div>
             </section>
             <section className="flex justify-center items-center">

@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getServerSession } from 'next-auth';
-import Users from '../Components/Account';
-import Userss from '../Components/Account2';
+import UserData from '../Components/Account';
+import Users from '../Components/Accounts';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 
 
@@ -21,7 +21,7 @@ const MenuAdmin = async () => {
     } else {
       return (
         <>
-          <Userss />
+          <UserData/>
         </>
       );
     }

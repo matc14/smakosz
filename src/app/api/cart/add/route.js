@@ -5,9 +5,7 @@ const prisma = new PrismaClient();
 
 export async function POST(request) {
     const { userId, dishId, quantity } = await request.json();
-    console.log({ userId, dishId, quantity });
 
-    // Check if the cart entry already exists
     const existingCart = await prisma.cart.findFirst({
         where: {
             userId: Number(userId),
@@ -17,7 +15,6 @@ export async function POST(request) {
 
     let cart;
     if (existingCart) {
-        // If the entry exists, update the quantity
         cart = await prisma.cart.update({
             where: {
                 id: existingCart.id,
@@ -27,7 +24,6 @@ export async function POST(request) {
             },
         });
     } else {
-        // If the entry does not exist, create a new one
         cart = await prisma.cart.create({
             data: {
                 userId: Number(userId),
