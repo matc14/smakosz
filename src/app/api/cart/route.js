@@ -8,10 +8,6 @@ const prisma = new PrismaClient();
 export async function GET() {
   const session = await getServerSession(authOptions)
   
-//   if (!session) {
-//     return res.status(401).json({ error: 'Unauthorized' });
-//   }
-
   const userId = session.user.id;
 
 

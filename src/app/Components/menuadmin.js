@@ -10,6 +10,7 @@ const prisma = new PrismaClient;
 
 async function getDishes() {
     const dishes = await prisma.dish.findMany()
+    dishes.sort((a, b) => a.id - b.id);
     return dishes;
 }
 

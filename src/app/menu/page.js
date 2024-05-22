@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import AddCart from "../Components/AddCart";
+import DeleteCart from "../Components/DeleteCart";
 
 
 export const dynamic = "force-dynamic";
@@ -15,6 +16,7 @@ const session = await getServerSession(authOptions);
 
 async function getDishes() {
     const dishes = await prisma.dish.findMany()
+    dishes.sort((a, b) => a.id - b.id);
     return dishes;
 }
 
@@ -33,14 +35,8 @@ function Dish({ id, imageSrc, name, price, addToCart }) {
             <img src={imageSrc} className="w-[400px] h-[300px]" />
             <span className="pt-4 font-bold text-center">{name}</span>
             <span className="mr-2 text-[#324A6D] mb-2 text-center p-1.5">{price + " zł"}</span>
-        
-            {/* <button 
-                className="mt-4 px-4 py-2 bg-[#467FF7] text-white rounded"
-            >
-                Dodaj do koszyka
-            </button> */}
             
-            <AddCart />
+            <AddCart id={id}/>
         </div>
     );
 }
@@ -61,6 +57,7 @@ export default async function Home({ }) {
                         return (
                             <Dish
                                 key={dish.id}
+                                id={dish.id}
                                 imageSrc={dish.image}
                                 name={dish.name}
                                 price={dish.price}

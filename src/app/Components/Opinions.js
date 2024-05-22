@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 function Opinion({ id, firstName, lastName, content, date }) {
     return (
         <div className="flex flex-col lg:w-[600px] w-auto justify-center pb-8">
@@ -32,7 +33,6 @@ export default function Opinions() {
         })
         reset()
         fetchOpinions()
-        router.refresh()
     }
 
     const handleAdd = () => {
@@ -98,7 +98,9 @@ export default function Opinions() {
                             ))}
                             {session ? 
                             (<button onClick={handleAdd} className="rounded-full bg-[#467FF7] text-[#fff8f0] hover:bg-[#4675f7] py-2 w-48">Zostaw opinię</button>) : (
-                                <></>)}
+                            <Link href="/login">
+                            <button className="rounded-full bg-[#467FF7] text-[#fff8f0] hover:bg-[#4675f7] py-2 w-48">Zostaw opinię</button>
+                            </Link>)}
                         </div>
                     )}
                 </div>

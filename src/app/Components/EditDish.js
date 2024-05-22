@@ -3,6 +3,7 @@ import { Button } from "flowbite-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import DeleteDish from "./DeleteDish";
+import Success from "../Components/Success"
 
 export default function EditDish({ id, imageSrc, nameC, priceC }) {
 
@@ -111,7 +112,14 @@ export default function EditDish({ id, imageSrc, nameC, priceC }) {
                     <DeleteDish id={id} />
                 )}
 
+                
+
             </div>
+            {editing? (
+                    <Success />
+                ) :
+                (<></>)}
         </form >
+        
     );
 }

@@ -106,7 +106,7 @@ export default function Home() {
       <Title />
       <Why />
       <Catering />
-      <Dishes />
+      {/* <Dishes /> */}
       <Promotions />
       <Opinions />
       <Footer />

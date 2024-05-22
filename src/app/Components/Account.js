@@ -3,6 +3,7 @@ import Footer from "../Components/Footer";
 import { PrismaClient } from "@prisma/client";
 import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+import User from '../Components/User';
 
 const prisma = new PrismaClient();
 const session = await getServerSession(authOptions);
@@ -19,17 +20,6 @@ function Title() {
         </section>
     );
 }
-
-function User({ id, login, firstName, lastName, email }) {
-    return (
-        <div className="w-full h-auto flex flex-col justify-center items-center text-[#1C2448] bg-[#F3F5F8]">
-            <span className="font-bold text-center">{login}</span>
-            <span className="pt-2 text-center">{firstName} {lastName}</span>
-            <span className="pt-2 text-center">{email}</span>
-        </div>
-    );
-}
-
 
 export default async function Users() {
     const users = await getUsers();

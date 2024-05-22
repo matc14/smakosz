@@ -64,7 +64,7 @@ function Form() {
                         required />
                 </div>
                 {alert ? (
-                    <div class="px-3  py-2.5 mb-4 w-64 text-sm font-bold text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 rounded-full border-none text-center" role="alert">
+                    <div className="px-3  py-2.5 mb-4 w-64 text-sm font-bold text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400 rounded-full border-none text-center" role="alert">
                      Błędny login lub hasło!
                     </div>
                 ) : 

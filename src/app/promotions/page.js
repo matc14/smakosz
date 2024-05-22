@@ -12,27 +12,27 @@ function Title() {
 function Content() {
     return (
         <section className="flex justify-center items-center">
-        <div class="grid grid-cols-2 gap-4 w-5/6 py-10">
-            <div class="grid gap-4">
+        <div className="grid grid-cols-2 gap-4 w-5/6 py-10">
+            <div className="grid gap-4">
                 <div>
-                    <img class="h-auto w-full" src="img/promo-1.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-1.png" alt=""/>
                 </div>
                 <div>
-                    <img class="h-auto w-full" src="img/promo-3.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-3.png" alt=""/>
                 </div>
                 <div>
-                    <img class="h-auto w-full" src="img/promo-5.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-5.png" alt=""/>
                 </div>
             </div>
-            <div class="grid gap-4">
+            <div className="grid gap-4">
                 <div>
-                    <img class="h-auto w-full" src="img/promo-2.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-2.png" alt=""/>
                 </div>
                 <div>
-                    <img class="h-auto w-full" src="img/promo-4.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-4.png" alt=""/>
                 </div>
                 <div>
-                    <img class="h-auto w-full" src="img/promo-6.png" alt=""/>
+                    <img className="h-auto w-full" src="img/promo-6.png" alt=""/>
                 </div>
             </div>
         </div>

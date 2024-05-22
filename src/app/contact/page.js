@@ -15,7 +15,7 @@ function Contact() {
         <div className="w-5/6 flex xl:flex-row flex-col h-auto justify-center items-center py-20">
         <div className="mx-auto flex flex-col">
             <span className="font-bold text-xl text-[#1C2448]">Bądź z nami w kontakcie</span>
-            <span className="text-[#324A6D]">Email: Kontakt@smakosz.com</span>
+            <span className="text-[#324A6D]">Email: kontakt@smakosz.com</span>
             <span className="text-[#324A6D]">Telefon: 933-290-231 </span>
             </div>
           <img className="mt-10 items-center justify-center mx-auto xl:w-[600px] h-[450px] w-auto" src="img/contact.png" />
