@@ -3,6 +3,8 @@ import { getServerSession } from 'next-auth';
 import UserData from '../Components/Account';
 import Users from '../Components/Accounts';
 import { authOptions } from '../api/auth/[...nextauth]/route';
+export const dynamic = "force-dynamic";
+
 
 
 const MenuAdmin = async () => {
