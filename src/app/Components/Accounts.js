@@ -1,12 +1,9 @@
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { PrismaClient } from "@prisma/client";
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import DeleteUser from '../Components/DeleteUser';
 
 const prisma = new PrismaClient();
-const session = await getServerSession(authOptions);
 
 async function getUsers() {
     const users = await prisma.user.findMany();
